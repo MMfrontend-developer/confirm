@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirming Password</title>
+</head>
+<body>
+    <form>
+        <label>Name:</label><br>
+    <input type="name" placeholder="Name"><br>
+    <label>E-mail:</label>  <br>
+    <input type="email" placeholder="email"><br>
+    <label>Password:</label><br>
+    <input type="password" placeholder="password" id="password"><br>
+    <label>ConfirmPassword:</label><br>
+    <input type="password" placeholder="ConfirmPasword" id="confirmPassword"><br>
+
+    <button id="submitButton" type="submit" disabled>Submit</button>
+</form>
+</body>
+</html>
+<script>
+    const password = document.getElementById ("password");
+    const confirmPassword = document.getElementById ("confirmPassword");
+    const submitButton = document.getElementById ("submitButton");
+      
+    function validatePasswords(){
+if (password.value == confirmPassword.value){
+    submitButton.disabled = false;
+} else {
+    submitButton.disabled = true;
+}
+    }
+
+    password.addEventListener('input', validatePasswords);
+    confirmPassword.addEventListener('input', validatePasswords);
+</script>
